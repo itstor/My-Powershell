@@ -44,7 +44,7 @@ if ($isConnected) {
 	Write-Host "Current Weather in $($waetherapi_result.name): " -foregroundColor $foregroundColor
 	switch ($waetherapi_result.weather[0].main) {
 		"Clear" {
-			if ($(Get-Date -format HH) -lt 5 -and $(Get-Date -format HH) -gt 18) {
+			if ($(Get-Date -format HH) -lt 5 -or $(Get-Date -format HH) -gt 18) {
 				Write-Host "🌔" -NoNewline
 			}
 			else {
